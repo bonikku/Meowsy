@@ -2,6 +2,15 @@
   <%= render "form" %>
 </div>
 
-<%= turbo_frame_tag "meows" do %>
+<div id="empty">
+  <%= turbo_frame_tag Meow.new do %>
+    <% if @meows.none? %>
+      <%= render "empty" %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= turbo_frame_tag "meows", class: "divide-y list-none" do %>
   <%= render @meows %>
 <% end %>
+

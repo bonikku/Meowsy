@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :meows, except: %i[edit update]
+  resources :profiles
 
   devise_for :users
   root to: "meows#index"

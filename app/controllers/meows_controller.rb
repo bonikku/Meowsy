@@ -23,6 +23,8 @@ class MeowsController < ApplicationController
   end
 
   def destroy
+    @meow = current_user.meows.find(params[:id])
+    @meow.destroy
   end
 
   private
