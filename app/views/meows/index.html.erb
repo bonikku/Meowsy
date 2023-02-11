@@ -4,13 +4,15 @@
 
 <div id="empty">
   <%= turbo_frame_tag Meow.new do %>
-    <% if @meows.none? %>
-      <%= render "empty" %>
+    <% if Meow.all.none? %>
+      <%= render "meows/empty" %>
     <% end %>
   <% end %>
 </div>
 
-<%= turbo_frame_tag "meows", class: "divide-y list-none" do %>
-  <%= render @meows %>
+<%= turbo_frame_tag "meows" do %>
+  <% @meows.each do |meow| %>
+    <%= render partial: "meows/#{meow.meow_type.parameterize}", locals: { meow: meow } %>
+  <% end %>
 <% end %>
 

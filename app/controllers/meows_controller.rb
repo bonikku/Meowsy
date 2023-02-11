@@ -27,9 +27,23 @@ class MeowsController < ApplicationController
     @meow.destroy
   end
 
+  def remeow
+    @meow = Meow.find(params[:id])
+
+    @remeow = current_user.meows.new(meow_id: @meow.id)
+
+    respond_to do |format|
+      if @remeow.save
+        format.turbo_stream
+      else
+        format.html { redirect_back fallback_location: @meow, alert: "Couldn't remeow" }
+      end
+    end
+  end
+
   private
 
   def meow_params
-    params.require(:meow).permit(:body)
+    params.require(:meow).permit(:body, :meow_id)
   end
 end

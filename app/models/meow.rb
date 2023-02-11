@@ -1,5 +1,17 @@
 class Meow < ApplicationRecord
   belongs_to :user
+  belongs_to :meow, optional: true
+  
+  validates :body, length: { maximum: 240 },
+            allow_blank: false, unless: :meow_id
 
-  validates :body, length: { maximum: 240 }, allow_blank: false
+  def meow_type
+    if meow_id? && body?
+      "quote-meow"
+    elsif meow_id?
+      "remeow"
+    else
+      "meow"
+    end
+  end
 end

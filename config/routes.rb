@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sidekiq"
   end
 
-  resources :meows, except: %i[edit update]
+  resources :meows, except: %i[edit update] do
+    member do
+      post :remeow
+    end
+  end
   resources :profiles
 
   devise_for :users

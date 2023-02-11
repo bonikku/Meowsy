@@ -1,5 +1,6 @@
 <ul class="-ml-3 flex space-x-14 items-start justify-start list-none">
   <li>
+
     <%= link_to meow, class: "text-gray-500 space-x-2 group flex items-center justify-center", data: { turbo: false } do %>
       <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-sky-50">
         <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 h-5 fill-current group-hover:text-sky-500">
@@ -10,9 +11,10 @@
       </div>
       <span class="group-hover:text-sky-500 text-gray-500">3</span>
     <% end %>
+
     <% if user_signed_in? && meow.user_id != current_user.id %>
       <li>
-        <a href="#" class="text-gray-500 space-x-2 group flex items-center justify-center">
+        <%= button_to remeow_meow_path(meow), method: :post, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
           <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 h-5 fill-current group-hover:text-green-500">
               <g>
@@ -21,9 +23,10 @@
             </svg>
           </div>
           <span class="group-hover:text-green-500 text-gray-500">3</span>
-        </a>
+        <% end %>
       </li>
     <% end %>
+
     <li>
       <a href="#" class="text-gray-500 space-x-2 group flex items-center justify-center">
         <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-rose-50">
@@ -36,6 +39,7 @@
         <span class="group-hover:text-rose-500 text-gray-500">3</span>
       </a>
     </li>
+
     <% if user_signed_in? && current_user == meow.user %>
       <li>
         <%= button_to meow_path(meow), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } },

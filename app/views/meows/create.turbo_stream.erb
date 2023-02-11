@@ -1,7 +1,7 @@
 <%= turbo_stream.prepend "meows" do %>
-  <%= render "meow", meow: @meow %>
+  <%= render "meows/meow", meow: @meow %>
 <% end %>
 
 <%= turbo_stream.remove Meow.new do %>
-  <% render "empty" %>
+  <% render "meows/empty" %>
 <% end %>
