@@ -1,7 +1,8 @@
 class Meow < ApplicationRecord
   belongs_to :user
   belongs_to :meow, optional: true
-  
+  has_many :comments
+
   validates :body, length: { maximum: 240 },
             allow_blank: false, unless: :meow_id
 

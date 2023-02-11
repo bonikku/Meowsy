@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :meows, except: %i[edit update] do
+    resources :comments, only: %i[create destroy]
     member do
       post :remeow
     end

@@ -22,6 +22,12 @@ class MeowsController < ApplicationController
     end
   end
 
+  def show
+    @meow = Meow.find(params[:id])
+    @comment = Comment.new
+    @comments = @meow.comments.order(created_at: :desc)
+  end
+
   def destroy
     @meow = current_user.meows.find(params[:id])
     @meow.destroy
