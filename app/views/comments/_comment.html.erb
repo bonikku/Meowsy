@@ -9,14 +9,16 @@
 
       <ul class="-ml-3 flex space-x-14 items-start justify-start list-none">
         <li>
-          <%#= content_tag :div, class: "#{dom_id(comment)}_likes" do %>
-          <%#= render "likes/likes", likeable: comment %>
-          <%# end %>
+          <%= content_tag :div, class: "#{dom_id(comment)}_likes" do %>
+            <%= render "likes/likes", likeable: comment %>
+          <% end %>
         </li>
         <% if user_signed_in? && current_user == comment.user %>
           <li>
             <%= button_to meow_comment_path(comment.meow, comment), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
-              <%= render "svg/delete" %>
+              <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50">
+                <%= render "svg/delete" %>
+              </div>
             <% end %>
           </li>
         <% end %>

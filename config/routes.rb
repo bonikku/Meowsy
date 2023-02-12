@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       post :remeow
     end
   end
+
   resources :profiles
+  resources :likes, only: :create
 
   devise_for :users
   root to: "meows#index"

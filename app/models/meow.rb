@@ -1,4 +1,5 @@
 class Meow < ApplicationRecord
+  include Likeable
   belongs_to :user
   belongs_to :meow, optional: true
   has_many :comments

@@ -12,7 +12,7 @@
 
 <%= turbo_frame_tag "meows" do %>
   <% @meows.each do |meow| %>
-    <%= render partial: "meows/#{meow.meow_type.parameterize}", locals: { meow: meow } %>
+    <%= render partial: "meows/#{meow.meow_type}", locals: { meow: meow } %>
   <% end %>
 <% end %>
 
