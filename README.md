@@ -10,4 +10,4 @@ To do:
 - Update comments
 - Attach images in meowz and comments
 - Utilize sidekiq
-- Move to postgresql
+- Move to postgresql ✅
