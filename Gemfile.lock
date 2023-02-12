@@ -155,6 +155,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.1.0)
       ast (~> 2.4.1)
+    pg (1.4.5)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -232,7 +233,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.0-x86_64-darwin)
     standard (1.24.0)
       language_server-protocol (~> 3.17.0.2)
       rubocop (= 1.44.1)
@@ -284,13 +284,13 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   name_of_person
+  pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 4.0)
   selenium-webdriver
   sidekiq (~> 6.5, >= 6.5.4)
   sprockets-rails
-  sqlite3 (~> 1.4)
   standard
   stimulus-rails
   stripe
