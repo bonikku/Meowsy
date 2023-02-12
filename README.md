@@ -1,24 +1,13 @@
-# README
+# Meowzy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Twitter clone made with Rails 7 and Turbo
 
-Things you may want to cover:
+Currently allows user to create, share, like and delete the Meowz also comment on them
 
-* Ruby version
+To do:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Update meowz
+- Update comments
+- Attach images in meowz and comments
+- Utilize sidekiq
+- Move to postgresql
